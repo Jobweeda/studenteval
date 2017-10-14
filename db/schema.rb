@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20171014100309) do
 
   create_table "batches", force: :cascade do |t|
     t.string "name"
-    t.string "startdate"
-    t.string "enddate"
+    t.date "startdate"
+    t.date "enddate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

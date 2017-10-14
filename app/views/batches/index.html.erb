@@ -3,3 +3,6 @@
 <% @batches.each do |batch| %>
 <p><%= link_to batch.name, batch_path(batch.id) %></p>
 <% end %>
+
+<hr>
+<%= link_to '[Add a batch]', new_batch_path %>
