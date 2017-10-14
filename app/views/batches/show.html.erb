@@ -1,6 +1,5 @@
 <h1><%= @batch.name %></h1>
-<p> Start of this batch: <%= @batch.startdate %> </p>
-<p> End of this batch: <%= @batch.enddate %> </p>
+<p> This batch will be active between <%= @batch.startdate %> and <%= @batch.enddate %></p>
 
 <% if @batch.students.any? %>
   <ul>
@@ -11,3 +10,6 @@
 <% else %>
   <p>This batch doesnt have any students yet.</p>
 <% end %>
+<hr>
+
+<%= render 'studentform' %>
