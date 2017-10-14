@@ -1,3 +1,13 @@
 <h1><%= @batch.name %></h1>
 <p> Start of this batch: <%= @batch.startdate %> </p>
 <p> End of this batch: <%= @batch.enddate %> </p>
+
+<% if @batch.students.any? %>
+  <ul>
+    <% @batch.students.each do |student| %>
+      <li><%= student.first_name + ' ' + student.last_name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>This batch doesnt have any students yet.</p>
+<% end %>
