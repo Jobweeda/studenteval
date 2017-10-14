@@ -3,7 +3,7 @@
 <%= form_for [@batch, @student] do |f| %>
 
   <ul>
-    <% @batch.errors.full_messages.each do |msg| %>
+    <% @student.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
     <% end %>
   </ul>
