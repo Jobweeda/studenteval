@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
  root "batches#index"
 
- resources :batches
+ resources :batches do
+   resources :students
+ end
 end
