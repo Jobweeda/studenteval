@@ -3,4 +3,5 @@ class Student < ApplicationRecord
   validates :last_name, presence: true
 
   belongs_to :batch
+  has_many :evaluations
 end
