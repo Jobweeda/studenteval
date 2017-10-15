@@ -4,7 +4,7 @@
 <% if @batch.students.any? %>
   <ul>
     <% @batch.students.each do |student| %>
-      <li><%= student.first_name + ' ' + student.last_name %></li>
+      <li><%= "#{student.first_name} #{student.last_name}, #{student.current_color}" %></li>
     <% end %>
   </ul>
 <% else %>
