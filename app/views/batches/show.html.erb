@@ -2,16 +2,31 @@
 <p> This batch will be active between <%= @batch.startdate %> and <%= @batch.enddate %></p>
 
 <% if @batch.students.any? %>
-  <ul>
-    <% @batch.students.each do |student| %>
-    <div style=" border: 1px, solid, black;">
-  <%= link_to student.name, batch_student_path(@batch, student), class: 'btn btn-warning'%>
-</div>
+
+<div class="row">
+  <% @batch.students.each do |student| %>
+    <div style="padding-top: 20px; ">
+
+        <div class="col-md-3">
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="<%= student.photo %>" alt="Card image cap">
+              <h2 class="student-name"><%= link_to student.name, batch_student_path(@batch, student)%></h2>
+                <% student.evaluations.last(1).each do |evaluation| %>
+                  <% if evaluation.red == true %>
+                  <p style="background: red; height: 20px;"></p>
+                  <% elsif evaluation.yellow == true %>
+                  <p style="background: yellow; height: 20px;"></p>
+                  <% else evaluation.green == true %>
+                  <p style="background: green; height: 20px;"></p>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+       </div>
     <% end %>
-  </ul>
-<% else %>
-  <p>This batch doesnt have any students yet.</p>
-<% end %>
+  </div>
+  <% end %>
+
 <hr class="line">
 
 <%= render 'studentform' %>
