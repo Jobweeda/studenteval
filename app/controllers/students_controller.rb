@@ -24,10 +24,17 @@ class StudentsController < ApplicationController
    @student = batch.students.create(student_params)
 
      if @student.save
-        redirect_to @student.batch
+        redirect_to @evaluation.student.batch
      else
        render 'new'
      end
+  end
+
+  def destroy
+    @student = Student.find(params[:id])
+
+    @student.destroy
+    redirect_to @student.batch
   end
   private
 

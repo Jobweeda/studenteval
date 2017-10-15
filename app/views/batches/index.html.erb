@@ -1,8 +1,8 @@
 <h1> Batches </h1>
 
 <% @batches.each do |batch| %>
-<%= link_to batch.name, batch_path(batch.id), class: 'btn btn-primary' %>
+<%= link_to batch.name, batch_path(batch.id), class: 'btn btn-primary'%>
 <% end %>
-
-<hr>
+<div class="add-batch" style="padding-top: 50px;">
 <%= link_to 'Add a batch', new_batch_path, class: 'btn btn-default' %>
+</div>

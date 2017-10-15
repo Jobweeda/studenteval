@@ -1,22 +1,23 @@
-<h2> <%= @student.name %> </h2>
+<h2> <%= @student.name %> </h2> <%= link_to 'Remove Student', batch_student_path(@student), method: :delete, data: { confirm: 'You sure?' } %></span>
 
 <%= render 'evaluationform' %>
 
-
+<div class=recent-evaluations>
+<h2>Recent evaluations</h2>
 <% if @student.evaluations.any? %>
 <% @student.evaluations.each do |evaluation| %>
 <ul>
- <p> Date of the evaluation: <%= evaluation.evaluationdate %></p>
- <p> Evaluation: <% if evaluation.red == true %></p>
-   Red
+  <% if evaluation.red == true %></p>
+ <div style="background-color: red; width: 5%; text-align: center;"> <%= evaluation.evaluationdate %></div>
   <% elsif evaluation.yellow == true %>
-   Yellow
+  <div style="background-color: yellow; width: 5%; text-align: center;"> <%= evaluation.evaluationdate %></div>
   <% else %>
-   Green
+   <div style="background-color: green; width: 5%; text-align: center;"> <%= evaluation.evaluationdate %></div>
   <% end %>
- <hr>
+
  </ul>
  <% end %>
  <% else %>
   <p> This student hasn't been evaluated yet!</p>
 <% end %>
+</div>

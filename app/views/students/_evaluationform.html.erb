@@ -1,4 +1,4 @@
-<h3>Add an evaluation</h3>
+<div class="evaluation-form" style="position: center;"><h3>Add an evaluation</h3>
 
 <%= form_for [@student, @student.evaluations.new] do |f| %>
 
@@ -23,6 +23,9 @@
   </div>
 
   <div class='actions'>
-    <%= f.submit "Add this evaluation for #{@student.name}", class: 'btn btn-primary' %>
+    <%= f.submit "Add this evaluation for #{@student.name}", class: 'btn btn-default' %>
   </div>
 <% end %>
+
+
+</div>
