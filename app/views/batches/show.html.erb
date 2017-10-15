@@ -1,7 +1,14 @@
+<div class="batch-title">
 <h1><%= @batch.name %></h1>
 <p> This batch will be active between <%= @batch.startdate %> and <%= @batch.enddate %></p>
+</div>
 
-<button> ASK A QUESTION</button>
+
+
+
+<div class="question">
+<button class='btn btn-default'><%=@batch.random_pick%> ASK A QUESTION</button>
+</div>
 <% if @batch.students.any? %>
 <div class="row">
   <% @batch.students.each do |student| %>
