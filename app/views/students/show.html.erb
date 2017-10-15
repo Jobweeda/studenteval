@@ -1,0 +1,22 @@
+<h2> <%= @student.name %> </h2>
+
+<%= render 'evaluationform' %>
+
+
+<% if @student.evaluations.any? %>
+<% @student.evaluations.each do |evaluation| %>
+<ul>
+ <p> Date of the evaluation: <%= evaluation.evaluationdate %></p>
+ <p> Evaluation: <% if evaluation.red == true %></p>
+   Red
+  <% elsif evaluation.yellow == true %>
+   Yellow
+  <% else %>
+   Green
+  <% end %>
+ <hr>
+ </ul>
+ <% end %>
+ <% else %>
+  <p> This student hasn't been evaluated yet!</p>
+<% end %>

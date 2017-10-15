@@ -1,31 +1,28 @@
-<!-- <h3>Add an evaluation</h3>
+<h3>Add an evaluation</h3>
 
-<%= form_for [@batch, @student] do |f| %>
+<%= form_for [@student, @student.evaluations.new] do |f| %>
 
-  <ul>
-    <% @student.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
   <div class='form-group'>
-    <label>First name</label>
-    <%= f.text_field :first_name, class: 'form-check' %>
+    <label>Date of evaluation</label>
+    <%= f.date_select :evaluationdate, class: 'form-check' %>
   </div>
 
   <div class='form-group'>
-    <label>Last name</label>
-    <%= f.text_field :last_name, class: 'form-check' %>
+    <label>Red</label>
+    <%= f.check_box :red, class: 'form-check' %>
   </div>
 
   <div class='form-group'>
-    <label>Photo</label>
-    <%= f.text_field :photo, class: 'form-check' %>
+    <label>Yellow</label>
+    <%= f.check_box :yellow, class: 'form-check' %>
   </div>
 
-
-
+  <div class='form-group'>
+    <label>Green</label>
+    <%= f.check_box :green, class: 'form-check' %>
+  </div>
 
   <div class='actions'>
-    <%= f.submit "Add this student to #{@batch.name}", class: 'btn btn-primary' %>
+    <%= f.submit "Add this evaluation for #{@student.name}", class: 'btn btn-primary' %>
   </div>
-<% end %> -->
+<% end %>

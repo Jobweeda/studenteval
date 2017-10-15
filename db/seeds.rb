@@ -15,10 +15,3 @@ student3 = Student.create!({ first_name: 'Trist', last_name: 'Kwant', current_co
 student4 = Student.create!({ first_name: 'Marloes', last_name: 'Demmendaal', current_color: 'green', batch: batch3 })
 student5 = Student.create!({ first_name: 'Ana', last_name: 'Spaniola', current_color: 'yellow', batch: batch2 })
 student6 = Student.create!({ first_name: 'Eva', last_name: 'Peene', current_color: 'green', batch: batch2 })
-
-evaluation1 = Evaluation.create!({ red: true, student: student2 })
-evaluation2 = Evaluation.create!({ red: true, student: student4 })
-evaluation3 = Evaluation.create!({ yellow: true, student: student6 })
-evaluation4 = Evaluation.create!({ yellow: true, student: student1 })
-evaluation5 = Evaluation.create!({ green: true, student: student3 })
-evaluation6 = Evaluation.create!({ green: true, student: student5 })

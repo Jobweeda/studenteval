@@ -4,7 +4,7 @@
 <% if @batch.students.any? %>
   <ul>
     <% @batch.students.each do |student| %>
-      <li><%= link_to student.name, batch_student_path(@batch, student) %></li>
+      <%= link_to student.name, batch_student_path(@batch, student), class: 'btn btn-warning' %>
     <% end %>
   </ul>
 <% else %>

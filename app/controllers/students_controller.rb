@@ -3,11 +3,13 @@ class StudentsController < ApplicationController
 
   def index
    @students = Student.all
+   @evaluation = Evaluation.new
  end
 
  def show
    batch = Batch.find(params[:batch_id])
    @student = batch.students.find(params[:id])
+   @student = Student.find(params[:id])
  end
 
  def new
