@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+root to: "batches#index"
+
   devise_for :users
- root "batches#index"
+ 
 
  resources :batches do
    resources :students
@@ -9,4 +11,6 @@ Rails.application.routes.draw do
  resources :students do
    resources :evaluations
  end
+
+
 end
