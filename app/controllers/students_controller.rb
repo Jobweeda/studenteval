@@ -1,23 +1,32 @@
 class StudentsController < ApplicationController
 
-  def new
+
+  def index
+   @students = Student.all
+ end
+
+ def show
    batch = Batch.find(params[:batch_id])
-   @student = Student.new
+   @student = batch.students.find(params[:id])
+ end
+
+ def new
+   batch = Batch.find(params[:batch_id])
    @student = batch.students.build
-  end
+   @student = Student.new
+ end
 
-  def create
-    batch = Batch.find(params[:batch_id])
-    @student = Student.new
-    @student = batch.students.create(student_params)
+ def create
+   batch = Batch.find(params[:batch_id])
 
-      if  @student.save
+   @student = batch.students.create(student_params)
+
+     if @student.save
         redirect_to @student.batch
-      else
-        render 'new'
-      end
+     else
+       render 'new'
+     end
   end
-
   private
 
   def student_params

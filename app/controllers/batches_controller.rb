@@ -1,19 +1,22 @@
 class BatchesController < ApplicationController
-  def index
-    @batches = Batch.all
-  end
 
-  def show
-    @batch = Batch.find(params[:id])
-    @student = Student.new
-  end
+  def index
+   @batches  = Batch.all
+   @student  = Student.new
+ end
+
+ def show
+   @batch    = Batch.find(params[:id])
+   @students = @batch.students
+   @student  = Student.new
+ end
 
   def new
-    @batch = Batch.new
+    @batch   = Batch.new
   end
 
   def create
-    @batch = Batch.new(batch_params)
+    @batch   = Batch.new(batch_params)
 
      if @batch.save
        redirect_to @batch
