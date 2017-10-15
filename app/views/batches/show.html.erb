@@ -1,12 +1,11 @@
 <h1><%= @batch.name %></h1>
 <p> This batch will be active between <%= @batch.startdate %> and <%= @batch.enddate %></p>
 
+<button> ASK A QUESTION</button>
 <% if @batch.students.any? %>
-
 <div class="row">
   <% @batch.students.each do |student| %>
     <div style="padding-top: 20px; ">
-
         <div class="col-md-3">
           <div class="card" style="width: 20rem;">
             <img class="card-img-top" src="<%= student.photo %>" alt="Card image cap">
