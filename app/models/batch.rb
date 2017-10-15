@@ -13,11 +13,11 @@ def student_evaluations
       @batch.students.each do |student|
         student.evaluations.last(1).each do |evaluation|
         if evaluation.green == true
-          @green_evaluation << student.id.pop
+          @green_evaluation << student.id
         elsif evaluation.yellow == true
-          @yellow_evaluation << student.id.pop
+          @yellow_evaluation << student.id
         else
-          @red_evaluation << student.id.pop
+          @red_evaluation << student.id
         end
       end
     end
