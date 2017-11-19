@@ -38,7 +38,20 @@ class Api::BatchesController < ApplicationController
     render status: 200, json: {
       message: "Batch removed",
     }.to_json
+  end
 
+  def update
+    batch = Batch.find(params[:id])
+    if batch.update(batch_params)
+      render status: 200, json: {
+        message: "Batch changed",
+        batch: batch
+      }.to_json
+    else
+      render status: 422, json: {
+        errors: batch.errors
+      }.to_json
+    end
   end
 
   private
