@@ -7,7 +7,8 @@
 
 
 <div class="question">
-<button class='btn btn-default'><%=@batch.random_pick%> ASK A QUESTION</button>
+  <h2> Ask a question: </h2>
+<%= @batch.random_pick%>
 </div>
 <% if @batch.students.any? %>
 <div class="row">
