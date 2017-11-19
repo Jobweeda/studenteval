@@ -3,7 +3,7 @@ class Batch < ApplicationRecord
   validates :startdate, presence: true
   validates :enddate, presence: true
 
-  has_many :students
+  has_many :students, dependent: :destroy
 
   def student_evaluations
     @green_evaluation = []
@@ -28,7 +28,7 @@ class Batch < ApplicationRecord
     student_evaluations
     random_number = rand()
 
-   
+
     if random_number <= 0.17
         @green_evaluation.sample
     elsif random_number <= 0.50
