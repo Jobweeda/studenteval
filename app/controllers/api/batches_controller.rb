@@ -1,7 +1,7 @@
 class Api::BatchesController < ApplicationController
 
   skip_before_action :verify_authenticity_token
-  
+
   def index
     render status: 200, json: {
       batches: Batch.all
@@ -31,6 +31,15 @@ class Api::BatchesController < ApplicationController
     end
   end
 
+  def destroy
+    batch = Batch.find(params[:id])
+    batch.destroy
+
+    render status: 200, json: {
+      message: "Batch removed",
+    }.to_json
+
+  end
 
   private
   def batch_params
