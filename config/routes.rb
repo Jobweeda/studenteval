@@ -4,7 +4,9 @@ root to: "batches#index"
   devise_for :users
 
 namespace :api do
-  resources :batches
+  resources :batches do
+    resources :students, only: [:create, :update, :destroy]
+  end
 end
 
  resources :batches do
