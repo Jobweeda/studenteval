@@ -19,6 +19,34 @@ def create
     end
 end
 
+def update
+  student = @batch.students.find(params[:id])
+
+   if student.update(student_params)
+     render status: 200, json: {
+       message: "Student changed",
+       batch: @batch,
+       student: student
+     }.to_json
+   else
+     render status: 422, json: {
+       message: "Student couldnt be changed",
+       errors: student.errors
+     }.to_json
+   end
+end
+
+def destroy
+  student = @batch.students.find(params[:id])
+  student.destroy
+
+  render status: 200, json: {
+    message: "Student removed",
+    batch: @batch,
+    student: student
+  }.to_json 
+end
+
 private
 
 def set_batch
