@@ -1,12 +1,13 @@
-<h3>Add a batch</h3>
+<h3 class="batch-form">Add a batch</h3>
 
 <%= form_for @batch do |f| %>
 
-  <ul>
+  <ul class="batch-form">
     <% @batch.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
     <% end %>
   </ul>
+  <div class="batch-form">
   <div class="form-group">
     <label>Batch</label>
     <%= f.text_field :name, class: "form-check" %>
@@ -26,4 +27,5 @@
   <div class="actions" id="new-batch">
     <%= f.submit "Add this batch", class: "btn btn-primary" %>
   </div>
+  <div>
 <% end %>

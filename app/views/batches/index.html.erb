@@ -1,10 +1,21 @@
-<h1> Batches </h1>
+<div class="">
+<h1 class="page-header"> Batches </h1>
+</div>
+
+<% if notice.present? %>
+  <div class="alert alert-info">
+    <%= notice %>
+  </div>
+ <% end %>
 <div class="batches">
 <% @batches.each do |batch| %>
+<ul>
 <%= link_to batch.name, batch_path(batch.id), class: 'btn btn-default'%>
 <%= "#{batch.students.count} students" %>
+</ul>
 <% end %>
 </div>
-<div class="add-batch" style="padding-top: 50px;">
+
+<!-- <div class="add-batch" style="padding-top: 50px;">
 <%= link_to 'Add a batch', new_batch_path, class: 'btn btn-default' %>
-</div>
+</div> -->

@@ -4,6 +4,7 @@ class BatchesController < ApplicationController
   def index
    @batches  = Batch.all
    @student  = Student.new
+   @batch    = Batch.new
   end
 
  def show

@@ -1,8 +1,13 @@
+//= require_tree
+//= require_self
+
+@import "https://goo.gl/DcDN1G";
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 .form-control {
-  width: 100%;
+  width: 80%;
   text-align: center;
 
 }
@@ -27,4 +32,9 @@
 
 .batch-title {
   text-align: center;
+}
+
+.dropdown-menu {
+  width: 300px;
+  padding-left: 10px;
 }
