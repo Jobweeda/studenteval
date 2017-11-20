@@ -5,9 +5,8 @@
 
 <div class="batches">
 <% @batches.each do |batch| %>
-<ul>
-<%= link_to batch.name, batch_path(batch.id), class: 'btn btn-default'%>
-<%= "#{batch.students.count} students" %>
+<ul class="batch-buttons">
+<%= button_to "#{batch.name} currently has #{batch.students.count} student(s)", batch_path(batch.id), class: "batch-buttons", method: "get"%> 
 </ul>
 <% end %>
 </div>
