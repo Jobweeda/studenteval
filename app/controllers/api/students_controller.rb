@@ -2,6 +2,8 @@ class Api::StudentsController < ApplicationController
  skip_before_action :verify_authenticity_token
  before_action :set_batch
 
+
+
 def create
     student = @batch.students.new(student_params)
 
@@ -44,7 +46,7 @@ def destroy
     message: "Student removed",
     batch: @batch,
     student: student
-  }.to_json 
+  }.to_json
 end
 
 private

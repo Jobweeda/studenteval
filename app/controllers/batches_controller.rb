@@ -1,9 +1,10 @@
 class BatchesController < ApplicationController
+  before_action :set_batch, only: [:show, :edit, :update, :destroy]
 
   def index
    @batches  = Batch.all
    @student  = Student.new
- end
+  end
 
  def show
    @batch      = Batch.find(params[:id])
@@ -29,6 +30,10 @@ class BatchesController < ApplicationController
 
 
   private
+
+  def set_batch
+    batch = Batch.find(params[:id])
+  end
 
   def batch_params
     params.require(:batch).permit(:name, :startdate, :enddate)
