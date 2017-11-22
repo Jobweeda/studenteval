@@ -11,10 +11,17 @@
   <button btn-default class="random-button" id="random-button" onclick="window.location.reload()">Next question</button>
 <%= @batch.random_pick%>
 </div>
+
+<div class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Add a student<span class="caret"></span></a>
+<ul class="dropdown-menu">
+ <%= render 'batches/studentform'%>
+</ul>
+</div>
 <% if @batch.students.any? %>
 <div class="row">
   <% @batch.students.each do |student| %>
-    <div style="padding-top: 20px; ">
+    <div>
         <div class="col-md-3">
           <div class="card" style="width: 20rem;">
             <img class="card-img-top" src="<%= student.photo %>" alt="Card image cap">
