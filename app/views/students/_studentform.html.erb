@@ -1,6 +1,6 @@
 <h3>Add a student</h3>
 
-<%= form_for [@student] do |f| %>
+<%= form_for [@batch, @student] do |f| %>
 
   <ul>
     <% @student.errors.full_messages.each do |msg| %>
