@@ -2,11 +2,16 @@
 <h1 class="page-header"> Batches </h1>
 </div>
 
-
+<div class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Add a batch<span class="caret"></span></a>
+<ul class="dropdown-menu">
+ <%= render 'form'%>
+</ul>
+</div>
 <div class="batches">
 <% @batches.each do |batch| %>
 <ul class="batch-buttons">
-<%= button_to "#{batch.name} currently has #{batch.students.count} student(s)", batch_path(batch.id), class: "batch-buttons", method: "get"%> 
+<%= button_to "#{batch.name} currently has #{batch.students.count} student(s)", batch_path(batch.id), class: "batch-buttons", method: "get"%>
 </ul>
 <% end %>
 </div>

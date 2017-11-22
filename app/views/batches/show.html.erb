@@ -8,7 +8,7 @@
 
 <div class="question">
   <h2> Ask a question: </h2>
-  <button btn-default class="random-button" id="random-button">Next question</button>
+  <button btn-default class="random-button" id="random-button" onclick="window.location.reload()">Next question</button>
 <%= @batch.random_pick%>
 </div>
 <% if @batch.students.any? %>
